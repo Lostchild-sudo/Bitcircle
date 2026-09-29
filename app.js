@@ -2,12 +2,12 @@
 
 const pages = document.querySelectorAll(".app-container section");
 
-const navigationButtons = document.querySelectorAll(
-    ".bottom-nav button"
-);
+const navigationButtons = document.querySelectorAll(".bottom-nav button");
 
 const profileButton = document.querySelector(".profile-btn");
 const profileAvatar = document.querySelector(".navProfile-avatar");
+const navAvatarHead = document.querySelector(".navAvatar-head");
+const navAvatarBody = document.querySelector(".navAvatar-body");
 
 
 function showPage(pageId) {
@@ -42,10 +42,14 @@ function showPage(pageId) {
     if (pageId === "profile") {
 
         profileAvatar.classList.add("change");
+        navAvatarHead.classList.add("change");
+        navAvatarBody.classList.add("change");
 
     } else {
 
         profileAvatar.classList.remove("change");
+        navAvatarHead.classList.remove("change");
+        navAvatarBody.classList.remove("change");
 
     }
 
