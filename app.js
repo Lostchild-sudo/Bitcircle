@@ -1,6 +1,6 @@
 "use strict";
 
-const pages = document.querySelectorAll(".app-container section");
+const pages = document.querySelectorAll(".app-container>.page-section");
 
 const navigationButtons = document.querySelectorAll(".bottom-nav button");
 
