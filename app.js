@@ -40,6 +40,7 @@ function showPage(pageId) {
      */
 
     if (pageId === "profile") {
+        showProfileItem("post-grid");
 
         profileAvatar.classList.add("change");
         navAvatarHead.classList.add("change");
