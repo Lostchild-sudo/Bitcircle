@@ -138,20 +138,11 @@ body {
     background: #FFCA99;
 }
 
-.profile-pic {
-    display: flex;
-    align-items: center;
-    
-    width: 27%;
-    height: 12vh;
-    background: transparent;
-}
-
 .profile-avatar {
     position: relative;
-    width: 90%;
-    height: 100%;
-    margin: auto;
+    width: clamp(70px, 22vw, 220px);
+    height: clamp(70px, 22vw, 220px);
+    aspect-ratio: 1;
     background-color: #713600;
     border: 6px solid #713600;
     border-radius: 50%;
