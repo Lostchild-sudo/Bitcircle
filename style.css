@@ -124,6 +124,14 @@ line-height: 1.5rem;
 color: #713600; 
 } 
 
+.profile-name:empty::before {
+     content: "Enter you name";
+}
+
+.profile-bio:empty::before {
+     content: "bio";
+}
+
 .edit-profile { 
 display: flex; 
 align-items: center; 
