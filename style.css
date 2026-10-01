@@ -67,6 +67,11 @@ font-size: clamp(1.5rem, 4vw, 2rem);
 line-height: 1.2; 
 } 
 
+.username:empty::before {
+     content: "username";
+     color: #713600;
+}
+
 .topBar .logo { 
 font-family: "Lobster", cursive; 
 } 
