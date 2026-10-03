@@ -13,7 +13,7 @@ body {
 width: 100%; 
 min-height: 100dvh; 
 font-family: Arial, sans-serif; 
-background-color: #FFCA99; 
+background: #ffca99; 
 color: #ffffff; 
 overflow-x: hidden; 
 }
@@ -58,25 +58,25 @@ align-items: center;
 justify-content: space-between; 
 width: 100%; 
 min-height: 50px; 
-background-color: #FFCA99; 
+background: transparent; 
 } 
 
 .topBar .logo, .profile-head .username { 
 color: #713600; 
 font-size: clamp(1.5rem, 4vw, 2rem); 
-line-height: 1.2; 
+line-height: 1.5; 
 } 
 
 .username:empty::before {
-     content: "username";
-     color: #713600;
+    content: "username";
+    color: #713600;
 }
 
 .topBar .logo { 
 font-family: "Lobster", cursive; 
 } 
 
-.topBar a, .profile-head a { 
+.topBar a, .profile-head button { 
 display: flex; 
 align-items: center; 
 justify-content: center; 
@@ -84,6 +84,49 @@ color: #713600;
 font-size: clamp(20px, 3vw, 26px); 
 text-decoration: none; 
 } 
+
+.profile-head button {
+display: flex; 
+align-items: center; 
+justify-content: center; 
+border: none; 
+background: transparent; 
+color: #713600; 
+cursor: pointer; 
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    background: #D69456;
+    color: white;
+                      
+    width: 37vw;
+    height: 100dvh;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+           
+    z-index: 100;
+}
+       
+#menu.active {
+    transform: translateX(0);
+}
+
+.menu-items {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-67%, -90%);
+    line-height: 2;
+}
+
+ul li {
+    color: #713600;
+    font-weight: bold; 
+}
 
 .profileBar { 
 display: flex; 
@@ -108,7 +151,7 @@ min-width: 0;
 min-height: 130px; 
 padding: 10px; 
 color: #713600; 
-background-color: #FFCA99; 
+background: transparent; 
 font-weight: bold; 
 gap: 10px; 
 } 
@@ -125,11 +168,13 @@ color: #713600;
 } 
 
 .profile-name:empty::before {
-     content: "Enter you name";
+    content: "Enter your name";
+    color: #713600;
 }
 
 .profile-bio:empty::before {
-     content: "bio";
+    content: "your bio";
+    color: #713600;
 }
 
 .edit-profile { 
@@ -139,7 +184,7 @@ justify-content: center;
 width: 100%; 
 min-height: 40px; 
 padding: 5px; 
-background-color: #FFCA99; 
+background: transparent; 
 } 
 
 .edit-profile button { 
@@ -267,18 +312,18 @@ color: #000000;
 .bottom-nav { 
 position: fixed; 
 left: 0;
-right: 0;
+right: 0; 
 bottom: 0;
 
 padding-bottom: env(safe-area-inset-bottom);
-
+ 
 z-index: 1000; 
 display: flex; 
 align-items: center; 
 justify-content: space-around; 
 width: 100%; 
 min-height: 50px; padding: 5px 10px calc(5px + env(safe-area-inset-bottom)); 
-background-color: #D69456; 
+background: #D69456;
 border-top: 1px solid #713600; 
 } 
 
@@ -311,7 +356,7 @@ justify-content: space-around;
 width: 100%; 
 min-height: 40px; 
 padding: 4px 10px; 
-background-color: #FFCA99; 
+background: transparent; 
 border-bottom: 2px solid #713600; 
 } 
 
