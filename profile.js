@@ -44,3 +44,28 @@ navigationIcons.forEach((button) => {
 });
 
 showProfileItem("post-grid");
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const menuPage = document.getElementById('menu');
+    const menuButton = document.querySelector('.menu-btn');
+
+    // Open or close menu
+    menuButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        menuPage.classList.toggle('active');
+    });
+
+    // Close menu when clicking anywhere else
+    document.addEventListener('click', (event) => {
+
+        if (
+            !menuPage.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            menuPage.classList.remove('active');
+        }
+
+    });
+
+});
