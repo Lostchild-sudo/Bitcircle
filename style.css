@@ -183,15 +183,13 @@ align-items: center;
 justify-content: center; 
 width: 100%; 
 min-height: 40px; 
-padding: 5px; 
 background: transparent; 
 } 
 
 .edit-profile button { 
-width: 95%; 
+width: 98%; 
 max-width: 700px; 
-min-height: 30px; 
-padding: 5px 12px; 
+min-height: 35px;
 font-size: clamp(14px, 2vw, 17px); 
 border: none; 
 border-radius: 7px; 
