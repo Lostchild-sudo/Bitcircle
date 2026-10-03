@@ -105,14 +105,14 @@ cursor: pointer;
                       
     width: 37vw;
     height: 100dvh;
-    transform: translateX(100%);
+    transform: translateY(-100%);
     transition: transform 0.4s ease;
            
     z-index: 100;
 }
        
 #menu.active {
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .menu-items {
