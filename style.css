@@ -13,7 +13,7 @@ body {
 width: 100%; 
 min-height: 100dvh; 
 font-family: Arial, sans-serif; 
-background: #ffca99; 
+background: #000000; 
 color: #ffffff; 
 overflow-x: hidden; 
 }
@@ -62,14 +62,14 @@ background: transparent;
 } 
 
 .topBar .logo, .profile-head .username { 
-color: #713600; 
+color: #ffffff; 
 font-size: clamp(1.5rem, 4vw, 2rem); 
 line-height: 1.5; 
 } 
 
 .username:empty::before {
     content: "username";
-    color: #713600;
+    color: #ffffff;
 }
 
 .topBar .logo { 
@@ -80,7 +80,7 @@ font-family: "Lobster", cursive;
 display: flex; 
 align-items: center; 
 justify-content: center; 
-color: #713600; 
+color: #ffffff; 
 font-size: clamp(20px, 3vw, 26px); 
 text-decoration: none; 
 } 
@@ -91,41 +91,8 @@ align-items: center;
 justify-content: center; 
 border: none; 
 background: transparent; 
-color: #713600; 
+color: #ffffff; 
 cursor: pointer; 
-}
-
-#menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    flex-direction: column;
-    background: #D69456;
-    color: white;
-                      
-    width: 37vw;
-    height: 100dvh;
-    transform: translateY(-100%);
-    transition: transform 0.4s ease;
-           
-    z-index: 100;
-}
-       
-#menu.active {
-    transform: translateY(0);
-}
-
-.menu-items {
-    position: absolute;
-    top: 14%;
-    left: 50%;
-    transform: translate(-67%, -90%);
-    line-height: 2;
-}
-
-ul li {
-    color: #713600;
-    font-weight: bold; 
 }
 
 .profileBar { 
@@ -148,10 +115,11 @@ align-items: center;
 justify-content: space-around; 
 flex: 1; 
 min-width: 0; 
-min-height: 130px; 
+min-height: 100px; 
 padding: 10px; 
-color: #713600; 
-background: transparent; 
+border-radius: 20px;
+color: #1B191A; 
+background: #ffffff; 
 font-weight: bold; 
 gap: 10px; 
 } 
@@ -164,17 +132,17 @@ max-width: 800px;
 margin-left: auto; 
 margin-right: auto; 
 line-height: 1.5rem; 
-color: #713600; 
+color: #ffffff; 
 } 
 
 .profile-name:empty::before {
     content: "Enter your name";
-    color: #713600;
+    color: #ffffff;
 }
 
 .profile-bio:empty::before {
     content: "your bio";
-    color: #713600;
+    color: #ffffff;
 }
 
 .edit-profile { 
@@ -182,20 +150,23 @@ display: flex;
 align-items: center; 
 justify-content: center; 
 width: 100%; 
-min-height: 40px; 
+min-height: 40px;  
 background: transparent; 
 } 
 
 .edit-profile button { 
-width: 98%; 
+display: flex;
+justify-content: center;
+align-items: center;
+
+width: 97%; 
 max-width: 700px; 
-min-height: 35px;
+min-height: 35px; 
 font-size: clamp(14px, 2vw, 17px); 
 border: none; 
 border-radius: 7px; 
-background-color: #D69456; 
-color: #713600; 
-cursor: pointer; 
+background: #ffffff; 
+color: #1B191A;  
 } 
 
 .profile-avatar { 
@@ -203,8 +174,8 @@ position: relative;
 width: clamp(70px, 22vw, 160px); 
 aspect-ratio: 1 / 1; 
 flex-shrink: 0; 
-background-color: #713600; 
-border: clamp(3px, 0.5vw, 6px) solid #713600; 
+background-color: #777777; 
+border: clamp(3px, 0.5vw, 6px) solid #777777; 
 border-radius: 50%; 
 overflow: hidden; 
 display: block; 
@@ -235,16 +206,23 @@ position: relative;
 width: 26px; 
 aspect-ratio: 1 / 1; 
 flex-shrink: 0; 
-background-color: #713600; 
-border: 2px solid #713600; 
+background-color: #ffffff; 
+border: 2px solid #ffffff; 
 border-radius: 50%; 
 overflow: hidden; 
 display: block; 
-} 
+}
+ 
 .navProfile-avatar.change { 
 width: 30px; 
-background-color: #ffffff; 
+background-color: transparent; 
 border-color: #ffffff; 
+filter: drop-shadow(0 0 1px rgb(151, 243, 255))
+        drop-shadow(0 0 2px rgb(151, 243, 255))
+        drop-shadow(0 0 10px rgb(151, 243, 255))
+        drop-shadow(0 0 40px rgb(151, 243, 255))
+        drop-shadow(0 0 100px rgb(151, 243, 255))
+        drop-shadow(0 0 5px rgb(151, 243, 255));
 } 
 
 .navAvatar-head, .navAvatar-head.change { 
@@ -257,11 +235,11 @@ border-radius: 50%;
 } 
 
 .navAvatar-head { 
-background-color: #ffffff; 
+background-color: #1B191A; 
 } 
 
 .navAvatar-head.change { 
-background-color: #713600; 
+background-color: #ffffff; 
 }
 
 .navAvatar-body, .navAvatar-body.change { 
@@ -274,11 +252,11 @@ border-radius: 50% 50% 0 0;
 } 
 
 .navAvatar-body { 
-background-color: #ffffff; 
+background-color: #1B191A; 
 } 
 
 .navAvatar-body.change { 
-background-color: #713600; 
+background-color: #ffffff; 
 } 
 
 #search-bar { 
@@ -288,9 +266,9 @@ width: 100%;
 min-height: 40px; 
 padding: 8px 18px; 
 font-size: clamp(15px, 2vw, 17px); 
-background-color: #D69456; 
+background-color: #1B191A; 
 color: #ffffff; 
-border: 2px solid #5A2B00; 
+border: 2px solid #555555; 
 border-radius: 50px; 
 outline: none; 
 }
@@ -298,13 +276,13 @@ outline: none;
 .page-section h1 { 
 text-align: center; 
 font-size: clamp(1.5rem, 4vw, 2.2rem); 
-color: #713600; 
+color: #ffffff; 
 } 
 
 .profile-items h2 { 
 text-align: center; 
 font-size: clamp(1.2rem, 3vw, 1.8rem); 
-color: #000000; 
+color: #ffffff; 
 }
 
 .bottom-nav { 
@@ -320,9 +298,12 @@ display: flex;
 align-items: center; 
 justify-content: space-around; 
 width: 100%; 
-min-height: 50px; padding: 5px 10px calc(5px + env(safe-area-inset-bottom)); 
-background: #D69456;
-border-top: 1px solid #713600; 
+min-height: 50px; 
+padding: 5px 10px calc(5px + env(safe-area-inset-bottom)); 
+background: #1B191A;
+border-top: 1px solid #777777; 
+
+overflow: hidden;
 } 
 
 .bottom-nav button, .profile-nav button { 
@@ -331,7 +312,7 @@ align-items: center;
 justify-content: center; 
 border: none; 
 background: transparent; 
-color: #713600; 
+color: #ffffff; 
 cursor: pointer; 
 }
 
@@ -341,10 +322,20 @@ min-height: 40px;
 font-size: clamp(18px, 4vw, 22px); 
 }
 
-.bottom-nav button.active { 
-color: #ffffff; 
-font-size: clamp(21px, 4.5vw, 25px); 
-font-weight: bold; 
+.bottom-nav button.active {
+    color: #ffffff;
+    font-size: clamp(21px, 4.5vw, 25px);
+    font-weight: bold;
+}
+
+.bottom-nav button.active i {
+    filter:
+        drop-shadow(0 0 1px rgb(151, 243, 255))
+        drop-shadow(0 0 2px rgb(151, 243, 255))
+        drop-shadow(0 0 10px rgb(151, 243, 255))
+        drop-shadow(0 0 40px rgb(151, 243, 255))
+        drop-shadow(0 0 100px rgb(151, 243, 255))
+        drop-shadow(0 0 5px rgb(151, 243, 255));
 }
 
 .profile-nav { 
@@ -355,7 +346,7 @@ width: 100%;
 min-height: 40px; 
 padding: 4px 10px; 
 background: transparent; 
-border-bottom: 2px solid #713600; 
+border-bottom: 2px solid #1B191A; 
 } 
 
 .profile-nav button { 
@@ -365,7 +356,7 @@ font-size: clamp(21px, 4vw, 26px);
 } 
 
 .profile-nav button.active { 
-color: #ffffff; 
+color: #1B191A; 
 font-weight: bold; 
 }
 
