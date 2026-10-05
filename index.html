@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@
           rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 </head>
 
@@ -62,17 +64,34 @@
                    <i class="fa-solid fa-bars"></i>
                </button>
             </div>
-            <div class="profileHead-items">
-              <div id="menu" class="head-item">
-                  <div class="menu-items">
-                    <ul class="menu-list">
-                        <li class="settings">Settings</li>
-                        <li class="contact-details">Contact-info</li>
-                        <li class="security">Password & Security</li>
-                    </ul>
-                    <button class="logout">Log out</button>
+            <div id="menu">
+                <div class="menu-panel">
+                  <div class="menu-header">
+                      <button class="back-btn" type="button">◀ Back</button>
                   </div>
-              </div>
+                  <div class="menu-grid">
+                    <button class="box settings">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="box contact-details">
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>Contact-info</span>
+                    </button>
+                    <button class="box security">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Security</span>
+                    </button>
+                    <button class="box tasks">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <span>Reminder</span>
+                    </button>
+                    <button class="box log-out">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Log-out</span>
+                    </button>
+                  </div>
+                </div>
             </div>
             <div class="profileBar">
                 <div class="profile-pic">
@@ -178,4 +197,3 @@
 
 </body>
 </html>
-
