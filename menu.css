@@ -1,0 +1,206 @@
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+} 
+
+#menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background: rgba(5, 8, 25, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+/* Visible menu */
+#menu.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Sliding panel */
+.menu-panel {
+  width: min(95%, 660px);
+  height: min(98dvh, 950px);
+  overflow-y: auto;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 20px 10px;
+  border-radius: 30px 30px 0 0;
+
+  background: transparent;
+
+  transform: translateY(105%);
+  transition: transform 0.55s cubic-bezier(
+    0.22, 1, 0.36, 1
+  );
+}
+
+/* Slide from bottom to top */
+#menu.active .menu-panel {
+  transform: translateY(0);
+}
+
+.back-btn {
+  margin-bottom: 35px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0 5px 25px;
+}
+
+.menu-grid .box {
+  min-width: 0;
+  min-height: clamp(170px, 29vw, 240px);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  background: rgba(119, 126, 183, 0.25);
+  color: white;
+  font-size: clamp(15px, 3.5vw, 22px);
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(70px) scale(0.92);
+
+  transition:
+    transform 0.45s ease,
+    opacity 0.4s ease,
+    background 0.25s ease;
+}
+
+/* Cards appear after opening */
+#menu.active .box {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger the cards */
+#menu.active .box:nth-child(1) {
+  transition-delay: 0.12s;
+}
+#menu.active .box:nth-child(2) {
+  transition-delay: 0.18s;
+}
+#menu.active .box:nth-child(3) {
+  transition-delay: 0.24s;
+}
+#menu.active .box:nth-child(4) {
+  transition-delay: 0.30s;
+}
+#menu.active .box:nth-child(5) {
+  transition-delay: 0.36s;
+}
+
+/* Icon circles */
+.box .fa-solid {
+  width: 90px;
+  height: 90px;
+  max-width: 30vw;
+  max-height: 30vw;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ffca99, #168de9);
+  color: white;
+  font-size: 36px;
+}
+
+/* Different icon colors */
+.settings .fa-solid {
+  background: linear-gradient(135deg, #b18aff, #753bfa);
+}
+
+.contact-details .fa-solid {
+  background: linear-gradient(135deg, #ff8ce1, #e92db7);
+}
+
+.security .fa-solid {
+  background: linear-gradient(135deg, #ffc18a, #ff822d);
+}
+
+.log-out .fa-solid {
+  background: linear-gradient(135deg, #83b6ff, #3865ee);
+}
+
+.tasks .fa-solid {
+  background: linear-gradient(135deg, #91ff7b, #0abf53);
+}
+
+.settings { color: #ffffff !important; }
+.contact-setails { color: #ffffff !important; }
+.security { color: #ffffff !important; }
+.log-out { color: #ffffff !important; }
+.tasks { color: #ffffff !important; }
+
+.menu-grid .box:active {
+  background: rgba(160, 167, 220, 0.4);
+  transform: scale(0.96);
+}
+
+/* Small screens */
+@media (max-width: 380px) {
+  .menu-panel {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .menu-grid {
+    gap: 12px;
+  }
+
+  .menu-grid .box {
+    min-height: 165px;
+    border-radius: 25px;
+    gap: 17px;
+  }
+
+  .fa-solid {
+    width: 72px;
+    height: 72px;
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #menu,
+  .menu-panel,
+  .menu-grid .box {
+    transition-duration: 0.01ms;
+  }
+}
