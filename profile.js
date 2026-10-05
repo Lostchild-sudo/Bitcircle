@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const menuPage = document.getElementById('menu');
     const menuButton = document.querySelector('.menu-btn');
-
+    const backButton = document.querySelector('.back-btn');
+    
     // Open or close menu
     menuButton.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -57,15 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close menu when clicking anywhere else
-    document.addEventListener('click', (event) => {
+    backButton.addEventListener('click', (event) => {
 
-        if (
-            !menuPage.contains(event.target) &&
-            !menuButton.contains(event.target)
-        ) {
+        
             menuPage.classList.remove('active');
-        }
-
     });
 
 });
