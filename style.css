@@ -343,21 +343,31 @@ display: flex;
 align-items: center; 
 justify-content: space-around; 
 width: 100%; 
-min-height: 40px; 
+min-height: 50px; 
 padding: 4px 10px; 
 background: transparent; 
-border-bottom: 2px solid #1B191A; 
+border-bottom: 2px solid #1b1b1b; 
 } 
 
 .profile-nav button { 
-width: 44px; 
-min-height: 36px; 
-font-size: clamp(21px, 4vw, 26px); 
+    width: 35px; 
+    min-height: 35px; 
+    font-size: clamp(21px, 4vw, 26px); 
+    background: #000000;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    color: #444;
+    
+    transition: 0.4s;
 } 
 
-.profile-nav button.active { 
-color: #1B191A; 
-font-weight: bold; 
+.profile-nav button.active {
+    color: #00ffee;
+
+    box-shadow:
+        0 0 5px #00ffee,
+        0 2px 2px white;
 }
 
 @media (min-width: 600px) {
