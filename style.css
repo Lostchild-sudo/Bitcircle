@@ -57,14 +57,14 @@ display: flex;
 align-items: center; 
 justify-content: space-between; 
 width: 100%; 
-min-height: 50px; 
+min-height: 40px; 
 background: transparent; 
 } 
 
 .topBar .logo, .profile-head .username { 
 color: #ffffff; 
 font-size: clamp(1.5rem, 4vw, 2rem); 
-line-height: 1.5; 
+ 
 } 
 
 .username:empty::before {
@@ -92,7 +92,6 @@ justify-content: center;
 border: none; 
 background: transparent; 
 color: #ffffff; 
-cursor: pointer; 
 }
 
 .profileBar { 
@@ -116,10 +115,11 @@ justify-content: space-around;
 flex: 1; 
 min-width: 0; 
 min-height: 100px; 
-padding: 10px; 
+padding: 10px;
+border: 1px solid rgba(255,255,255,0.04);
 border-radius: 20px;
-color: #1B191A; 
-background: #ffffff; 
+color: #ffffff; 
+background: #777eb73f; 
 font-weight: bold; 
 gap: 10px; 
 } 
@@ -145,37 +145,43 @@ color: #ffffff;
     color: #ffffff;
 }
 
-.edit-profile { 
-display: flex; 
-align-items: center; 
-justify-content: center; 
-width: 100%; 
-min-height: 40px;  
-background: transparent; 
-} 
+.edit-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-.edit-profile button { 
-display: flex;
-justify-content: center;
-align-items: center;
+    width: 100%;
+    min-height: 40px;
+    background: transparent;
+}
 
-width: 97%; 
-max-width: 700px; 
-min-height: 35px; 
-font-size: clamp(14px, 2vw, 17px); 
-border: none; 
-border-radius: 7px; 
-background: #ffffff; 
-color: #1B191A;  
-} 
+.edit-profile button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+    min-width: 0;
+    max-width: 350px;
+    min-height: 35px;
+
+    font-size: clamp(14px, 2vw, 17px);
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 7px;
+
+    background: #777eb73f;
+    color: #fff;
+}
 
 .profile-avatar { 
 position: relative;  
 width: clamp(70px, 22vw, 160px); 
 aspect-ratio: 1 / 1; 
 flex-shrink: 0; 
-background-color: #777777; 
-border: clamp(3px, 0.5vw, 6px) solid #777777; 
+background-color: #ffffff; 
+border: clamp(3px, 0.5vw, 6px) solid #ffffff; 
 border-radius: 50%; 
 overflow: hidden; 
 display: block; 
@@ -187,7 +193,7 @@ width: 40%;
 aspect-ratio: 1 / 1; 
 top: 16%; 
 left: 28.5%; 
-background-color: #ffffff; 
+background-color: #777777; 
 border-radius: 50%; 
 } 
 
@@ -197,7 +203,7 @@ width: 78%;
 height: 38%; 
 left: 11%; 
 bottom: 0; 
-background-color: #ffffff; 
+background-color: #777777; 
 border-radius: 50% 50% 0 0; 
 }
 
@@ -206,8 +212,8 @@ position: relative;
 width: 26px; 
 aspect-ratio: 1 / 1; 
 flex-shrink: 0; 
-background-color: #ffffff; 
-border: 2px solid #ffffff; 
+background-color: #000000; 
+border: 2px solid #000000; 
 border-radius: 50%; 
 overflow: hidden; 
 display: block; 
@@ -235,7 +241,7 @@ border-radius: 50%;
 } 
 
 .navAvatar-head { 
-background-color: #1B191A; 
+background-color: #ffffff; 
 } 
 
 .navAvatar-head.change { 
@@ -252,7 +258,7 @@ border-radius: 50% 50% 0 0;
 } 
 
 .navAvatar-body { 
-background-color: #1B191A; 
+background-color: #ffffff; 
 } 
 
 .navAvatar-body.change { 
@@ -266,10 +272,10 @@ width: 100%;
 min-height: 40px; 
 padding: 8px 18px; 
 font-size: clamp(15px, 2vw, 17px); 
-background-color: #1B191A; 
+background-color: #111; 
 color: #ffffff; 
-border: 2px solid #555555; 
-border-radius: 50px; 
+border: 3px solid #777eb73f; 
+border-radius: 15px; 
 outline: none; 
 }
 
@@ -300,7 +306,7 @@ justify-content: space-around;
 width: 100%; 
 min-height: 50px; 
 padding: 5px 10px calc(5px + env(safe-area-inset-bottom)); 
-background: #1B191A;
+background: #777eb73f;
 border-top: 1px solid #777777; 
 
 overflow: hidden;
@@ -312,8 +318,7 @@ align-items: center;
 justify-content: center; 
 border: none; 
 background: transparent; 
-color: #ffffff; 
-cursor: pointer; 
+color: #ffffff;  
 }
 
 .bottom-nav button { 
@@ -345,29 +350,26 @@ justify-content: space-around;
 width: 100%; 
 min-height: 50px; 
 padding: 4px 10px; 
-background: transparent; 
-border-bottom: 2px solid #1b1b1b; 
+background: transparent;  
 } 
 
 .profile-nav button { 
-    width: 35px; 
-    min-height: 35px; 
+    width: 24.5%; 
+    min-height: 40px; 
     font-size: clamp(21px, 4vw, 26px); 
     background: #000000;
-    border: 1px solid black;
-    border-radius: 50%;
+    border-bottom: 3px solid #444;
+    
 
     color: #444;
-    
-    transition: 0.4s;
 } 
 
 .profile-nav button.active {
-    color: #00ffee;
-
-    box-shadow:
-        0 0 5px #00ffee,
-        0 2px 2px white;
+    color: #ffffff;
+    border: 1px solid black;
+    width: 24%;
+    min-height: 35px;
+    box-shadow: 0 3px 2px white;
 }
 
 @media (min-width: 600px) {
